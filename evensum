@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+public class ForLoop {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int b = sc.nextInt();
+        int sum = sumEven(n,b);
+        System.out.println(sum);
+    }
+    public static boolean even(int n){
+        if(n>0) {
+            if (n % 2 == 0)
+                return true;
+        }
+        return false;
+    }
+    public static int sumEven(int a, int b) {
+        int sum = 0;
+        if(a < 0 || b < 0 || b>a) {
+            return -1;
+        }
+            for(int i=a;i<=b;i++) {
+                if (even(i)) {
+                    sum = sum + i;
+                }
+            }
+        return sum;
+    }
+}
