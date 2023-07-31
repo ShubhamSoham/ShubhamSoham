@@ -1,0 +1,26 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Try {
+        public static void main(String args[]) {
+            Scanner sc = new Scanner(System.in);
+            int a=sc.nextInt();
+            numberToWords(a);
+        }
+        public static void numberToWords(int a) {
+            int rem;
+            ArrayList <String> list = new ArrayList<>();
+            String arr[] ={ "Zero", "One", "Two", "Three", "Four", "Five", "Six", "Seven","Eight", "Nine" };
+            if(a<0) {
+                System.out.println("Invalid Input");
+                }
+
+            while(a!=0){
+                list.add (arr[a % 10]);
+                a=a/10;
+            }
+            for (int i = list.size () - 1; i >= 0; i--)
+                System.out.print (list.get (i) + " ");
+            System.out.println ();
+        }
+}
