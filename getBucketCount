@@ -1,0 +1,40 @@
+public class Try {
+        public static void main(String args[]) {
+//            Scanner sc = new Scanner(System.in);
+            System.out.println(getBucketCount(2, 3, 2, 3));
+            System.out.println(getBucketCount(7.25, 4.3, 2.35));
+            System.out.println(getBucketCount(3.26, 0.75));
+        }
+        public static int getBucketCount (double width, double height, double areaPerBucket, int extraBuckets) {
+            if(width<=0 || height<=0 || areaPerBucket<=0 || extraBuckets<0)
+                return -1;
+            else {
+                double area = width * height;
+                int total = (int) (area / areaPerBucket);
+                if(area % areaPerBucket != 0)
+                    total+=1;
+                return (total-extraBuckets);
+            }
+        }
+        public static int getBucketCount (double width, double height, double areaPerBucket) {
+            if(width<=0 || height<=0 || areaPerBucket<=0)
+                return -1;
+            else {
+                double area = width * height;
+                int total = (int) (area / areaPerBucket);
+                if(area%areaPerBucket != 0)
+                    total+=1;
+                return total;
+            }
+        }
+    public static int getBucketCount (double area, double areaPerBucket) {
+        if(area<=0 || areaPerBucket<=0)
+            return -1;
+        else {
+            int total = (int) (area / areaPerBucket);
+            if(area%areaPerBucket != 0)
+                total+=1;
+            return total;
+        }
+    }
+}
